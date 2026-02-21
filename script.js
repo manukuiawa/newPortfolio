@@ -1,74 +1,124 @@
-//botão dark-mode
+//Dark Mode
 const body = document.querySelector('body');
-const btn = document.querySelector('.btn');
-const icon = document.querySelector('.btn__icon');
+const buttons = document.querySelectorAll('.btn');
+const icons = document.querySelectorAll('.btn__icon');
 
 function store(value) {
-    localStorage.setItem('darkmode', value)
-;}
+    localStorage.setItem('darkmode', value);
+}
+
+function applyIconState(isDark) {
+    icons.forEach(icon => {
+        icon.classList.remove('fa-sun', 'fa-moon');
+        icon.classList.add(isDark ? 'fa-moon' : 'fa-sun');
+    });
+}
 
 function load() {
     const darkmode = localStorage.getItem('darkmode');
 
-    if(!darkmode) {
+    if (!darkmode) {
         store(false);
-        icon.classList.add('fa-sun');
-    } else if( darkmode === 'true') {
+        applyIconState(false);
+    } else if (darkmode === 'true') {
         body.classList.add('darkmode');
-        icon.classList.add('fa-moon');
-
-    } else if(darkmode == 'false') {
-        icon.classList.add('fa-sun');
+        applyIconState(true);
+    } else {
+        applyIconState(false);
     }
 }
 
 load();
 
-btn.addEventListener('click', () => {
+buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
 
-    body.classList.toggle('darkmode');
-    icon.classList.add('animated');
-    
-    store(body.classList.contains('darkmode'));
+        body.classList.toggle('darkmode');
 
-    if(body.classList.contains('darkmode')) {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-    } else {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-    }
+        icons.forEach(icon => icon.classList.add('animated'));
 
-    setTimeout(() => {
-        icon.classList.remove('animated');
-    }, 500);
-});
+        const isDark = body.classList.contains('darkmode');
+        store(isDark);
+        applyIconState(isDark);
 
-//Menu de Idiomas
-const langMenu = document.querySelector('.lang-menu');
-const selectedLang = document.querySelector('.selected-lang');
-const options = document.querySelectorAll('.lang-options li');
-const flag = document.querySelector('.selected-lang img');
-const text = document.querySelector('.selected-lang span');
+        setTimeout(() => {
+            icons.forEach(icon => icon.classList.remove('animated'));
+        }, 500);
 
-selectedLang.addEventListener('click', () => {
-    langMenu.classList.toggle('active');
-});
-
-options.forEach(option => {
-    option.addEventListener('click', () => {
-        const img = option.getAttribute('data-img');
-        const langText = option.textContent.trim();
-
-        flag.src = img;
-        text.textContent = langText;
-
-        langMenu.classList.remove('active');
     });
 });
 
-document.addEventListener('click', (e) => {
-    if (!langMenu.contains(e.target)) {
-        langMenu.classList.remove('active');
+//Troca de idiomas
+document.addEventListener("DOMContentLoaded", () => {
+
+    const langMenus = document.querySelectorAll('.lang-menu');
+    const elements = document.querySelectorAll('[data-pt]');
+    const options = document.querySelectorAll('.lang-options li');
+
+    function changeLanguage(lang, imgSrc, langLabel) {
+
+        elements.forEach(el => {
+            el.textContent = el.dataset[lang];
+        });
+
+        langMenus.forEach(menu => {
+            const flag = menu.querySelector('.selected-lang img');
+            const text = menu.querySelector('.selected-lang span');
+
+            flag.src = imgSrc;
+            text.textContent = langLabel;
+            menu.classList.remove('active');
+        });
+
+        localStorage.setItem("language", lang);
+        localStorage.setItem("languageFlag", imgSrc);
+        localStorage.setItem("languageLabel", langLabel);
     }
+
+    langMenus.forEach(menu => {
+        const selectedLang = menu.querySelector('.selected-lang');
+
+        selectedLang.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+        });
+    });
+
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            const lang = option.dataset.lang;
+            const img = option.dataset.img;
+            const label = option.textContent.trim();
+
+            changeLanguage(lang, img, label);
+        });
+    });
+
+    const savedLang = localStorage.getItem("language");
+    const savedFlag = localStorage.getItem("languageFlag");
+    const savedLabel = localStorage.getItem("languageLabel");
+
+    if (savedLang && savedFlag && savedLabel) {
+        changeLanguage(savedLang, savedFlag, savedLabel);
+    }
+
+});
+
+//Mobile Responsivo
+const mobileBtn = document.getElementById("mobile_btn");
+const mobileMenu = document.getElementById("mobile_menu");
+const menuIcon = mobileBtn.querySelector("i");
+
+mobileBtn.addEventListener("click", () => {
+  const isOpen = mobileMenu.classList.toggle("show");
+
+  document.body.classList.toggle("no-scroll", isOpen);
+
+  menuIcon.classList.toggle("fa-bars", !isOpen);
+  menuIcon.classList.toggle("fa-x", isOpen);
 });

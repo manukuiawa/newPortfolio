@@ -4,52 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Manuella Kuiawa</title>
+
     <link rel="stylesheet" href="style.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Portfólio - Manuella Kuiawa</title>
 </head>
 
 <body>
+
     <header class="cabecalho__container">
         <div class="cabecalho">
+
             <a href="#" class="cabecalho__logo">
                 <img class="cabecalho__logo--icone" src="/image/logo.png" alt="Logo">
             </a>
-            <nav role="navigation" aria-label="Navegação Principal">
+
+            <nav id="nav">
                 <ul class="cabecalho__navegacao--lista">
-                    <li class="cabecalho__navegacao--item">
-                        <a href="#home">Início</a>
+                    <li class="cabecalho__navegacao--item"><a href="#home" data-pt="Início" data-en="Home">Início</a>
                     </li>
-                    <li class="cabecalho__navegacao--item">
-                        <a href="#sobre">Sobre Mim</a>
-                    </li>
-                    <li class="cabecalho__navegacao--item">
-                        <a href="#skills">Skills</a>
-                    </li>
-                    <li class="cabecalho__navegacao--item">
-                        <a href="#projetos">Projetos</a>
-                    </li>
-                    <li class="cabecalho__navegacao--item">
-                        <a href="#contato">Contato</a>
-                    </li>
+                    <li class="cabecalho__navegacao--item"><a href="#sobre" data-pt="Sobre Mim" data-en="About Me">Sobre
+                            Mim</a></li>
+                    <li class="cabecalho__navegacao--item"><a href="#skills" data-pt="Skills"
+                            data-en="Skills">Skills</a></li>
+                    <li class="cabecalho__navegacao--item"><a href="#projetos" data-pt="Projetos"
+                            data-en="Projects">Projetos</a></li>
+                    <li class="cabecalho__navegacao--item"><a href="#contato" data-pt="Contato"
+                            data-en="Contact">Contato</a></li>
                 </ul>
             </nav>
-            <div class="btn">
+
+            <div class="btn desktop-only">
                 <div class="btn__indicator">
                     <div class="btn__icon--container">
-                        <i class="btn__icon fa-solid"></i>
+                        <i class="btn__icon fa-solid fa-moon"></i>
                     </div>
                 </div>
             </div>
-            <div class="lang-menu">
+
+            <div class="lang-menu desktop-only">
                 <div class="selected-lang">
                     <img class="bandeira" src="image/brasil.png" alt="Brasil">
                     <span>Português</span>
                 </div>
-
                 <ul class="lang-options">
                     <li data-lang="pt" data-img="image/brasil.png">
                         <img src="image/brasil.png" width="20"> Português
@@ -59,9 +59,68 @@
                     </li>
                 </ul>
             </div>
-        </div>
-    </header>
 
+            <button id="mobile_btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+
+                <li>
+                    <a href="#home" data-pt="Início" data-en="Home">Início</a>
+                </li>
+
+                <li>
+                    <a href="#sobre" data-pt="Sobre Mim" data-en="About Me">Sobre Mim</a>
+                </li>
+
+                <li>
+                    <a href="#skills" data-pt="Skills" data-en="Skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projetos" data-pt="Projetos" data-en="Projects">Projetos</a>
+                </li>
+
+                <li>
+                    <a href="#contato" data-pt="Contato" data-en="Contact">Contato</a>
+                </li>
+
+                <li class="mobile-controls">
+
+                    <div class="btn mobile-only">
+                        <div class="btn__indicator">
+                            <div class="btn__icon--container">
+                                <i class="btn__icon fa-solid fa-moon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lang-menu mobile-only">
+                        <div class="selected-lang">
+                            <img class="bandeira" src="image/brasil.png" alt="Brasil">
+                            <span>Português</span>
+                        </div>
+
+                        <ul class="lang-options">
+                            <li data-lang="pt" data-img="image/brasil.png">
+                                <img src="image/brasil.png" width="20"> Português
+                            </li>
+                            <li data-lang="en" data-img="image/eua.png">
+                                <img src="image/eua.png" width="20"> English
+                            </li>
+                        </ul>
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+
+    </header>
 
     <script src="script.js"></script>
 </body>
