@@ -28,6 +28,10 @@ body {
   background-color: var(--fundo-claro);
 }
 
+body, html {
+  overflow-x: hidden;
+}
+
 .cabecalho__container {
   background-color: #ffffff;
   width: 100%;
