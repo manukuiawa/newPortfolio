@@ -513,6 +513,15 @@ body.darkmode #sobre-mim .foto-container img {
   }
 }
 
+@media (max-width: 768px) {
+  .foto-container img {
+    width: 80%;      
+    max-width: 300px;  
+    height: auto;      
+    border-width: 3px; 
+  }
+}
+
 @media (max-width: 480px) {
   .cabecalho {
     padding: 0 12px;
@@ -520,6 +529,13 @@ body.darkmode #sobre-mim .foto-container img {
 
   .cabecalho__logo--icone {
     max-width: 140px;
+  }
+  
+  .foto-container img {
+    width: 90%;       
+    max-width: 250px;
+    height: auto;
+    border-width: 2px;
   }
 }
 
