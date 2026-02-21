@@ -180,7 +180,6 @@ body.darkmode #sobre-mim h1 {
   color: var(--cor-primaria-suave);
 }
 
-/* Card grande */
 body.darkmode #sobre-mim .card-sobre {
   background-color: #2a2a2a;
   border: 2px solid var(--cor-primaria-suave);
@@ -521,12 +520,15 @@ body.darkmode #sobre-mim .foto-container img {
     padding: 100px 20px 60px;
     width: 100%;
     box-sizing: border-box;
+    overflow-x: hidden; 
   }
 
   .container-home,
   .container-sobremim {
     width: 100%;
+    max-width: 100%;
     padding: 0 10px;
+    box-sizing: border-box;
   }
 }
 
@@ -547,6 +549,7 @@ body.darkmode #sobre-mim .foto-container img {
   .card-sobre {
     max-width: 100%;
     padding: 1rem;
+    box-sizing: border-box;
   }
 
   .mini-cards {
@@ -570,6 +573,7 @@ body.darkmode #sobre-mim .foto-container img {
   .container-home p {
     font-size: 0.95rem;
     max-width: 100%;
+    word-wrap: break-word; 
   }
 
   .home-buttons {
@@ -598,15 +602,21 @@ body.darkmode #sobre-mim .foto-container img {
   .card-sobre p {
     font-size: 0.9rem;
     line-height: 1.4;
+    word-wrap: break-word; 
   }
 
   #home,
   #sobre-mim {
     padding: 80px 10px 40px;
+    overflow-x: hidden; 
   }
 
   .home-buttons a {
     width: 100%;
     text-align: center;
+  }
+
+  .mini-cards {
+    gap: 0.5rem; 
   }
 }
