@@ -391,7 +391,7 @@ body.darkmode #sobre-mim .foto-container img {
 #sobre-mim {
   background-color: rgb(252, 199, 208);
   text-align: center;
-  height: 100vh;
+  min-height: 100vh; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -533,6 +533,10 @@ body.darkmode #sobre-mim .foto-container img {
 }
 
 @media (max-width: 768px) {
+   #sobre-mim {
+    padding: 80px 15px 40px; /* menor padding pra mobile */
+  }
+
   .sobre-mim-conteudo {
     flex-direction: column;
     align-items: center;
@@ -549,7 +553,6 @@ body.darkmode #sobre-mim .foto-container img {
   .card-sobre {
     max-width: 100%;
     padding: 1rem;
-    box-sizing: border-box;
   }
 
   .mini-cards {
@@ -557,7 +560,7 @@ body.darkmode #sobre-mim .foto-container img {
     width: 100%;
     gap: 1rem;
   }
-
+  
   .container-home {
     padding: 0 10px;
   }
