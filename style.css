@@ -185,6 +185,11 @@ body.darkmode #home {
   color: white;
 }
 
+body.darkmode .container-home {
+  background: rgba(35, 35, 46, 0.6); /* preto-azul escuro com transparência */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* borda sutil */
+}
+
 body.darkmode .btn-contato {
   border-color: var(--cor-primaria-hover);
 }
@@ -530,17 +535,13 @@ body.darkmode .footer-icons img:hover {
   align-items: center;
   text-align: center;
   gap: 20px;
-
   position: relative;
   z-index: 2;
-
-  background: rgba(255, 255, 255, 0.08); /* quase invisível */
+  background: rgba(255, 255, 255, 0.02);  /* quase invisível */
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-
-  padding: 50px;
+  padding: 54px;
   border-radius: 20px;
-
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .titulo-home {
