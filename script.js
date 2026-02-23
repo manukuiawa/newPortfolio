@@ -122,3 +122,12 @@ mobileBtn.addEventListener("click", () => {
   menuIcon.classList.toggle("fa-bars", !isOpen);
   menuIcon.classList.toggle("fa-x", isOpen);
 });
+
+//Rolagem 
+window.addEventListener("scroll", () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrollPercent = (scrollTop / scrollHeight) * 100;
+
+  document.querySelector(".scroll-progress").style.width = scrollPercent + "%";
+});

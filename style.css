@@ -21,17 +21,29 @@
   font-family: "Poppins";
 }
 
-body {
-  background-color: var(--fundo-claro);
-}
-
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
-body,
-html {
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: var(--fundo-claro);
   overflow-x: hidden;
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--cor-primaria);
+  z-index: 9999;
+  transition: width 0.1s ease;
 }
 
 .cabecalho__container {
