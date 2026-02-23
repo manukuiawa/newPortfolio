@@ -1,3 +1,64 @@
+const canvas = document.getElementById("binary-bg");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = document.getElementById("home").offsetHeight;
+
+const fontSize = 18;
+const columns = Math.floor(canvas.width / fontSize);
+
+const drops = [];
+const mouse = { x: -9999, y: -9999 };
+
+// inicializa colunas
+for (let i = 0; i < columns; i++) {
+  drops[i] = Math.random() * canvas.height;
+}
+
+document.addEventListener("mousemove", (e) => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+function draw() {
+  // fundo transparente leve para criar rastro
+  ctx.fillStyle = "rgba(255, 255, 255, 0.08)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = "rgba(242, 15, 98, 0.7)";
+  ctx.font = fontSize + "px monospace";
+
+  for (let i = 0; i < drops.length; i++) {
+    const text = Math.random() > 0.5 ? "0" : "1";
+    const x = i * fontSize;
+    const y = drops[i];
+
+    // interação com mouse
+    const dx = x - mouse.x;
+    const dy = y - mouse.y;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    if (Math.abs(x - mouse.x) < 120) {
+
+  const force = (120 - Math.abs(x - mouse.x)) / 3;
+  const randomY = (Math.random() - 0.5) * 30;
+
+  ctx.fillText(text, x, y + randomY - force);
+
+} else {
+  ctx.fillText(text, x, y);
+}
+
+    drops[i] += fontSize;
+
+    if (drops[i] > canvas.height) {
+      drops[i] = 0;
+    }
+  }
+}
+
+setInterval(draw, 80);
+
 //Dark Mode
 const body = document.querySelector("body");
 const buttons = document.querySelectorAll(".btn");
@@ -130,4 +191,21 @@ window.addEventListener("scroll", () => {
   const scrollPercent = (scrollTop / scrollHeight) * 100;
 
   document.querySelector(".scroll-progress").style.width = scrollPercent + "%";
+});
+
+//Efeito Suave
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+}, {
+  threshold: 0.5
+});
+
+reveals.forEach(reveal => {
+  observer.observe(reveal);
 });
