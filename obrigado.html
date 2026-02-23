@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+  <title>Mensagem Enviada</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --cor-primaria: #f20f62;
+      --cor-primaria-hover: #d10c53;
+      --cor-primaria-suave: #ff4f8f;
+      --fundo-claro: #f0f2f7;
+      --superficie-clara: #ffffff;
+      --card-claro: #f1f3f7;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins';
+      background: var(--fundo-claro);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box-obrigado {
+      background: var(--superficie-clara);
+      padding: 3rem;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 400px;
+      border: 2px solid var(--cor-primaria-suave);
+      box-shadow: 0 10px 30px rgba(242, 15, 98, 0.15);
+      animation: fadeIn 0.6s ease;
+    }
+
+    .box-obrigado h1 {
+      color: var(--cor-primaria);
+      margin-bottom: 1rem;
+    }
+
+    .box-obrigado p {
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    .box-obrigado a {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--cor-primaria);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .box-obrigado a:hover {
+      background: var(--cor-primaria-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(242, 15, 98, 0.25);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .box-obrigado {
+        margin: 0 20px;
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box-obrigado">
+    <h1>Mensagem enviada! 💌</h1>
+    <p>Obrigada por entrar em contato. Eu vou responder em breve!!</p>
+    <a href="index.html">Voltar para o site</a>
+  </div>
+
+</body>
+</html>
