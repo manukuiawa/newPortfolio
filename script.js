@@ -201,6 +201,28 @@ mobileBtn.addEventListener("click", () => {
   menuIcon.classList.toggle("fa-x", isOpen);
 });
 
+const mobileLinks = document.querySelectorAll('#mobile_nav_list a');
+
+mobileLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault(); // evita jump instantâneo
+
+    const targetId = link.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    if (mobileMenu.classList.contains('show')) {
+      mobileMenu.classList.remove('show');
+      document.body.classList.remove('no-scroll');
+      menuIcon.classList.toggle("fa-bars", true);
+      menuIcon.classList.toggle("fa-x", false);
+    }
+  });
+});
+
 //Rolagem 
 window.addEventListener("scroll", () => {
   const scrollTop = document.documentElement.scrollTop;
