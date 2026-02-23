@@ -25,6 +25,10 @@ body {
   background-color: var(--fundo-claro);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body,
 html {
   overflow-x: hidden;
@@ -352,6 +356,27 @@ body.darkmode .form-contato button {
 
 body.darkmode .form-contato button:hover {
   background: var(--cor-primaria);
+}
+
+body.darkmode .footer {
+  background-color: #191921;
+  border-top: 1px solid var(--borda-escura);
+}
+
+body.darkmode .footer p {
+  color: var(--texto-secundario-escuro);
+}
+
+body.darkmode .footer-icons img {
+ 
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+body.darkmode .footer-icons img:hover {
+  opacity: 1;
+  transform: translateY(-4px) scale(1.1);
+  filter: brightness(0) invert(1) drop-shadow(0 0 6px var(--cor-primaria-suave));
 }
 
 .lang-menu {
@@ -995,6 +1020,36 @@ body.darkmode .form-contato button:hover {
   background: var(--cor-primaria-hover);
 }
 
+.footer {
+  background-color: rgb(252, 199, 208);
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.footer-icons img {
+  width: 28px;
+  height: 28px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.footer-icons img:hover {
+  transform: translateY(-4px) scale(1.1);
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
 @media (max-width: 1024px) {
   .cabecalho {
     padding: 0 16px;
@@ -1155,6 +1210,15 @@ body.darkmode .form-contato button:hover {
 
   .form-contato {
     padding: 1.5rem;
+  }
+
+  .footer-icons {
+    gap: 18px;
+  }
+
+  .footer-icons img {
+    width: 24px;
+    height: 24px;
   }
 }
 
