@@ -1,4 +1,80 @@
+const canvas = document.getElementById("binary-bg");
+const ctx = canvas.getContext("2d");
 
+let fontSize = 18;
+let columns;
+let drops = [];
+const mouse = { x: -9999, y: -9999 };
+
+function setup() {
+  canvas.width = window.innerWidth;
+  canvas.height = document.getElementById("home").offsetHeight;
+
+  columns = Math.floor(canvas.width / fontSize);
+  drops = [];
+
+  // inicializa colunas
+  for (let i = 0; i < columns; i++) {
+    drops[i] = Math.random() * canvas.height;
+  }
+}
+
+// roda ao iniciar
+setup();
+
+// roda quando redimensionar
+window.addEventListener("resize", setup);
+
+document.addEventListener("mousemove", (e) => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+function draw() {
+
+  // rastro diferente no dark
+  if (document.body.classList.contains("darkmode")) {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
+  } else {
+    ctx.fillStyle = "rgba(255, 255, 255, 0.08)";
+  }
+
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // cor dos números muda conforme o modo
+  if (document.body.classList.contains("darkmode")) {
+    ctx.fillStyle = "rgba(255, 105, 180, 0.9)";
+    ctx.shadowColor = "rgba(255, 105, 180, 0.8)";
+    ctx.shadowBlur = 8;
+  } else {
+    ctx.fillStyle = "rgba(242, 15, 98, 0.7)";
+    ctx.shadowBlur = 0;
+  }
+
+  ctx.font = fontSize + "px monospace";
+
+  for (let i = 0; i < drops.length; i++) {
+    const text = Math.random() > 0.5 ? "0" : "1";
+    const x = i * fontSize;
+    const y = drops[i];
+
+    if (Math.abs(x - mouse.x) < 120) {
+      const force = (120 - Math.abs(x - mouse.x)) / 3;
+      const randomY = (Math.random() - 0.5) * 30;
+      ctx.fillText(text, x, y + randomY - force);
+    } else {
+      ctx.fillText(text, x, y);
+    }
+
+    drops[i] += fontSize;
+
+    if (drops[i] > canvas.height) {
+      drops[i] = 0;
+    }
+  }
+}
+
+setInterval(draw, 80);
 
 //Dark Mode
 const body = document.querySelector("body");

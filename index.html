@@ -30,10 +30,11 @@
                     <li class="cabecalho__navegacao--item"><a href="#home" data-pt="Início" data-en="Home">Início</a>
                     </li>
                     <li class="cabecalho__navegacao--item"><a href="#sobre-mim" data-pt="Sobre Mim"
-                            data-en="About Me">Sobre mim</a>
+                            data-en="About Me">Sobre
+                            Mim</a>
                     </li>
-                    <li class="cabecalho__navegacao--item"><a href="#servicos" data-pt="Serviços"
-                            data-en="Services">Serviços</a>
+                    <li class="cabecalho__navegacao--item"><a href="#skills" data-pt="Skills"
+                            data-en="Skills">Skills</a>
                     </li>
                     <li class="cabecalho__navegacao--item"><a href="#projetos" data-pt="Projetos"
                             data-en="Projects">Projetos</a>
@@ -50,6 +51,21 @@
                         <i class="btn__icon fa-solid fa-moon"></i>
                     </div>
                 </div>
+            </div>
+
+            <div class="lang-menu desktop-only">
+                <div class="selected-lang">
+                    <img class="bandeira" src="image/brasil.png" alt="Brasil">
+                    <span>Português</span>
+                </div>
+                <ul class="lang-options">
+                    <li data-lang="pt" data-img="image/brasil.png">
+                        <img src="image/brasil.png" width="20"> Português
+                    </li>
+                    <li data-lang="en" data-img="image/eua.png">
+                        <img src="image/eua.png" width="20"> English
+                    </li>
+                </ul>
             </div>
 
             <button id="mobile_btn">
@@ -70,7 +86,7 @@
                 </li>
 
                 <li>
-                    <a href="#servicos" data-pt="Serviços" data-en="Services">Serviços</a>
+                    <a href="#skills" data-pt="Skills" data-en="Skills">Skills</a>
                 </li>
 
                 <li>
@@ -114,216 +130,400 @@
 
     </header>
 
-    <section id="home" class="home-profissional reveal">
+    <section id="home" class="sobre reveal">
+
+        <canvas id="binary-bg"></canvas>
 
         <div class="container-home">
 
-            <p class="code-tag" data-pt="Desenvolvimento Web Estratégico" data-en="Strategic Web Development">
-                Desenvolvimento Web Estratégico
-            </p>
+            <p class="code-tag" data-pt="&lt; Olá Mundo /&gt;" data-en="&lt; Hello World /&gt;">&lt; Olá Mundo /&gt;</p>
 
-            <h1 class="titulo-home" data-pt="Landing Pages que Transformam Visitantes em Clientes"
-                data-en="Landing Pages that Turn Visitors into Customers">
-                Landing Pages que Transformam Visitantes em Clientes
-            </h1>
+            <h1 class="titulo-home" data-pt="Manuella de Fátima Kuiawa" data-en="Manuella de Fátima Kuiawa">Manuella de
+                Fátima Kuiawa</h1>
 
-            <p class="descricao-home"
-                data-pt="Sou Manuella Kuiawa, desenvolvedora freelancer especializada em criar páginas modernas, rápidas e focadas em conversão para negócios locais que querem vender mais."
-                data-en="I'm Manuella Kuiawa, a freelance developer specialized in creating modern, fast and conversion-focused landing pages for local businesses that want to increase sales.">
-                Sou Manuella Kuiawa, desenvolvedora freelancer especializada em criar páginas modernas, rápidas e
-                focadas em conversão para negócios locais que querem vender mais.
+            <h2 class="subtitulo-home" data-pt="Estudante de Ciência da Computação" data-en="Computer Science Student">
+                Estudante de Ciência da Computação</h2>
+
+            <p data-pt="Estudo Ciência da Computação e sou daquelas que gosta de entender como tudo funciona por trás das telas. Amo desenvolvimento web e transformar ideias em projetos que saem do papel e viram código de verdade."
+                data-en="I study Computer Science and I'm the kind of person who loves understanding how everything works behind the scenes. I love web development and turning ideas into real code projects.">
+                Estudo Ciência da Computação e sou daquelas que gosta de entender como tudo funciona por trás das telas.
+                Amo desenvolvimento web e transformar ideias em projetos que saem do papel e viram código de verdade.
             </p>
 
             <div class="home-buttons">
-                <a href="#projetos" class="btn-projetos" data-pt="Ver Projetos" data-en="View Projects">
-                    Ver Projetos
-                </a>
-
-                <a href="https://wa.me/+5548988633724" target="_blank" class="btn-contato" data-pt="Falar pelo WhatsApp"
-                    data-en="Chat on WhatsApp">
-                    Falar pelo WhatsApp
-                </a>
+                <a href="#projetos" class="btn-projetos" data-pt="Ver Projetos" data-en="View Projects">Ver Projetos</a>
+                <a href="#contato" class="btn-contato" data-pt="Entrar em Contato" data-en="Contact Me">Entrar em
+                    Contato</a>
             </div>
 
         </div>
-
     </section>
+
 
     <section id="sobre-mim" class="sobre reveal">
         <div class="container-sobremim">
-
-            <p class="code-tag">// Sobre Mim</p>
-
-            <h1>Quem está por trás dos projetos</h1>
+            <p class="code-tag" data-pt="// Quem sou eu" data-en="// Who I am">// Quem sou eu</p>
+            <h1 data-pt="Sobre Mim" data-en="About Me">Sobre Mim</h1>
 
             <div class="sobre-mim-conteudo">
-
                 <div class="foto-container">
-                    <img src="image/eu.png" alt="Manuella Kuiawa">
+                    <img src="image/eu.png" alt="Eu">
                 </div>
 
-                <div class="card-sobre">
-                    <p>
-                        Sou Manuella Kuiawa, desenvolvedora freelancer focada na criação
-                        de landing pages estratégicas para negócios locais.
-                    </p>
+                <div class="card-e-mini">
+                    <div class="card-sobre">
+                        <p data-pt="Olá! Sou estudante de Ciência da Computação, atualmente no 3º semestre. Minha jornada na programação começou em 2022, durante o ensino médio técnico em Administração, quando percebi que minha verdadeira paixão estava em tudo que envolvia tecnologia. No último dia em que pude trocar de curso, agarrei a oportunidade, e desde então busco me aprofundar cada vez mais nessa área."
+                            data-en="Hello! I'm a Computer Science student, currently in the 3rd semester. My journey in programming started in 2022 during high school with a technical course in Administration, when I realized my true passion was everything behind technology. On the last day I could switch courses, I grabbed the opportunity, and since then I have been diving deeper into this field.">
+                            Olá! Sou estudante de Ciência da Computação, atualmente no 3º semestre. Minha jornada na
+                            programação começou em 2022, durante o ensino médio técnico em Administração, quando percebi
+                            que minha verdadeira paixão estava em tudo que envolvia tecnologia. No último dia em que
+                            pude trocar de curso, agarrei a oportunidade, e desde então busco me aprofundar cada vez
+                            mais nessa área.
+                        </p>
+                        <br>
+                        <p data-pt="A cada dia, procuro aprender mais e aplicar meus conhecimentos em projetos reais. Tenho interesse em desenvolvimento web full stack, Inteligência Artificial e desenvolvimento de softwares. Meu objetivo é me tornar uma desenvolvedora capaz de impactar positivamente as pessoas, mostrando que a tecnologia vai muito além de código e que é uma ferramenta para melhorar vidas, conectar ideias e transformar o mundo."
+                            data-en="Every day I try to learn more and apply my knowledge in real projects. I am interested in full stack web development, Artificial Intelligence, and software development. My goal is to become a developer capable of positively impacting people, showing that technology goes far beyond code and is a tool to improve lives, connect ideas, and transform the world.">
+                            A cada dia, procuro aprender mais e aplicar meus conhecimentos em projetos reais. Tenho
+                            interesse em desenvolvimento web full stack, Inteligência Artificial e desenvolvimento de
+                            softwares. Meu objetivo é me tornar uma desenvolvedora capaz de impactar positivamente as
+                            pessoas, mostrando que a tecnologia vai muito além de código e que é uma ferramenta para
+                            melhorar vidas, conectar ideias e transformar o mundo.
+                        </p>
+                    </div>
 
-                    <p>
-                        Acredito que um site deve transmitir profissionalismo,
-                        facilitar o contato e ajudar empresas a venderem mais.
-                    </p>
+                    <div class="mini-cards">
+                        <div class="mini-card">
+                            <p class="numero" data-pt="15+" data-en="15+">15+</p>
+                            <p class="descricao" data-pt="Projetos" data-en="Projects">Projetos</p>
+                        </div>
+                        <div class="mini-card">
+                            <p class="numero" data-pt="3 Anos" data-en="3 Years">3 Anos</p>
+                            <p class="descricao" data-pt="Aprendendo" data-en="Learning">Aprendendo</p>
+                        </div>
+                        <div class="mini-card">
+                            <p class="numero" data-pt="3º" data-en="3rd">3º</p>
+                            <p class="descricao" data-pt="Semestre" data-en="Semester">Semestre</p>
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section id="servicos" class="servicos-section reveal">
+    <section id="skills" class="sobre reveal">
+        <div class="container-skills">
+            <p class="code-tag" data-pt="// Minhas Habilidades" data-en="// My Skills">// Minhas Habilidades</p>
+            <h1 data-pt="Habilidades e Tecnologias" data-en="Skills & Tech Stack">Habilidades e Tecnologias</h1>
 
-        <div class="container-servicos">
-
-            <p class="code-tag">// Serviços</p>
-            <h1>Como posso ajudar seu negócio</h1>
-
-            <div class="servicos-grid">
-
-                <div class="servico-card">
-                    <h2>Landing Page Profissional</h2>
-                    <p>Página moderna, responsiva e pensada para conversão.</p>
+            <div class="skills-grid">
+                <div class="skill-box hard-skills">
+                    <h2 data-pt="Hard Skills" data-en="Hard Skills">Hard Skills</h2>
+                    <p data-pt="HTML & CSS" data-en="HTML & CSS">HTML & CSS</p>
+                    <p data-pt="JavaScript" data-en="JavaScript">JavaScript</p>
+                    <p data-pt="Java" data-en="JavaScript">Java</p>
+                    <p data-pt="SQL" data-en="SQL">SQL</p>
+                    <p data-pt="Git & GitHub" data-en="Git & GitHub">Git & GitHub</p>
                 </div>
 
-                <div class="servico-card">
-                    <h2>Integração com WhatsApp</h2>
-                    <p>Contato rápido e direto com seus clientes.</p>
+                <div class="skill-box soft-skills">
+                    <h2 data-pt="Soft Skills" data-en="Soft Skills">Soft Skills</h2>
+                    <p data-pt="Organização" data-en="Organization">Organização</p>
+                    <p data-pt="Proatividade" data-en="Proactivity">Proatividade</p>
+                    <p data-pt="Trabalho em Equipe" data-en="Teamwork">Trabalho em Equipe</p>
+                    <p data-pt="Resolução de Problemas" data-en="Problem Solving">Resolução de Problemas</p>
+                    <p data-pt="Persistente" data-en="Persistence">Persistente</p>
                 </div>
-
-                <div class="servico-card">
-                    <h2>Publicação e Hospedagem</h2>
-                    <p>Coloco sua página no ar pronta para vender.</p>
-                </div>
-
             </div>
         </div>
-
     </section>
-
-    </section>
-    <section id="projetos" class="reveal">
+    <section  id="projetos">
         <div class="container-projetos">
 
-            <p class="code-tag">// Portfólio</p>
-
-            <h1>
-                Confira algumas landing pages que já desenvolvi
-            </h1>
-
-            <p class="subtitulo-projetos">
-                Estrutura estratégica, design moderno e foco total em conversão.
+            <p class="code-tag" data-pt="// Meus Projetos" data-en="// My Projects">
+                // Meus Projetos
             </p>
+
+            <h1 data-pt="Projetos" data-en="Projects">Projetos</h1>
 
             <div class="projetos-grid">
 
                 <article class="card">
+
                     <div class="card-img">
-                        <img src="image/mecanica.png" alt="Landing Page Oficina">
+                        <img src="image/mecanica.png" alt="Projeto Mecânica Automotiva">
                     </div>
 
-                    <h2>Oficina Automotiva</h2>
-
-                    <p class="descricao">
-                        Página desenvolvida para aumentar agendamentos
-                        e facilitar o contato via WhatsApp.
+                    <p class="categoria" data-pt="Desenvolvimento Web" data-en="Web Development">
+                        Desenvolvimento Web
                     </p>
 
-                    <a href="https://manukuiawa.github.io/mecanica-landingpage/" target="_blank" class="projeto-acao">
-                        Ver Landing Page
-                    </a>
+                    <h2 data-pt="Mecânica Automotiva" data-en="Automotive mechanics">Mecânica Automotiva</h2>
+
+                    <p class="descricao"
+                        data-pt="Landing page moderna e responsiva desenvolvida para uma mecânica automotiva."
+                        data-en="Modern and responsive landing page developed for an auto repair shop.">
+                        Landing page moderna e responsiva desenvolvida para uma mecânica automotiva.
+                    </p>
+
+                    <div class="tecnologias">
+                        <span class="tech">HTML</span>
+                        <span class="tech">CSS</span>
+                        <span class="tech">JavaScript</span>
+                    </div>
+
+                    <div class="acoes">
+                        <a href="https://manukuiawa.github.io/mecanica-landingpage/" class="projeto-acao primaria"
+                            target="_blank" data-pt="Ver Demo" data-en="View Demo">
+                            Ver Demo
+                        </a>
+
+                        <a href="https://github.com/manukuiawa/mecanica-landingpage" class="projeto-acao secundaria"
+                            target="_blank" data-pt="Ver GitHub" data-en="View GitHub">
+                            Ver GitHub
+                        </a>
+                    </div>
+
                 </article>
 
                 <article class="card">
+
                     <div class="card-img">
-                        <img src="image/codificae.png" alt="Landing Page Cursos Online">
+                        <img src="image/scpd.png" alt="Projeto Controle de Desaparecidos">
                     </div>
+
+                    <p class="categoria" data-pt="Desenvolvimento de Software" data-en="Software Development">
+                        Desenvolvimento de Software
+                    </p>
+
+                    <h2>Controle de Desaparecidos</h2>
+
+                    <p class="descricao"
+                        data-pt="Sistema para organizar e acompanhar informações de pessoas desaparecidas."
+                        data-en="System to organize and track information about missing persons.">
+                        Sistema para organizar e acompanhar informações de pessoas desaparecidas.
+                    </p>
+
+                    <div class="tecnologias">
+                        <span class="tech">Java</span>
+                        <span class="tech">MySQL</span>
+                    </div>
+
+                    <div class="acoes">
+                        <a href="https://github.com/manukuiawa/SystemMissingPersons-" class="projeto-acao secundaria"
+                            target="_blank" data-pt="Ver GitHub" data-en="View GitHub">
+                            Ver GitHub
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-img">
+                        <img src="image/codificae.png" alt="Projeto Codificae">
+                    </div>
+
+                    <p class="categoria" data-pt="Desenvolvimento Web" data-en="Development Web">
+                        Desenvolvimento Web
+                    </p>
 
                     <h2>Codificaê</h2>
 
-                    <p class="descricao">
-                        Landing page criada para apresentar cursos
-                        e incentivar matrículas online.
+                    <p class="descricao"
+                        data-pt="Site desenvolvido para apresentar uma plataforma de cursos online fictício."
+                        data-en="Website deleloped to present a fictional online course platform.">
+                        Site desenvolvido para apresentar uma plataforma de cursos online fictício.
                     </p>
 
-                    <a href="https://manukuiawa.github.io/Codifica-/" target="_blank" class="projeto-acao">
-                        Ver Landing Page
-                    </a>
+                    <div class="tecnologias">
+                        <span class="tech">HTML</span>
+                        <span class="tech">CSS</span>
+                    </div>
+
+                    <div class="acoes">
+                        <a href="https://manukuiawa.github.io/Codifica-/" class="projeto-acao primaria" target="_blank"
+                            data-pt="Ver Demo" data-en="View Demo">
+                            Ver Demo
+                        </a>
+
+                        <a href="https://github.com/manukuiawa/Codifica-" class="projeto-acao secundaria"
+                            target="_blank" data-pt="Ver GitHub" data-en="View GitHub">
+                            Ver GitHub
+                        </a>
+                    </div>
+
                 </article>
 
                 <article class="card">
+
                     <div class="card-img">
-                        <img src="image/doceencanto.png" alt="Landing Page Confeitaria">
+                        <img src="image/esportivo.png" alt="Projeto EsporTIvo">
                     </div>
 
-                    <h2>Confeitaria Doce Encanto</h2>
-
-                    <p class="descricao">
-                        Estrutura pensada para destacar produtos
-                        e aumentar pedidos via WhatsApp.
+                    <p class="categoria" data-pt="Desenvolvimento Web" data-en="Development Web">
+                        Desenvolvimento Web
                     </p>
 
-                    <a href="#" class="projeto-acao">
-                        Ver Landing Page
-                    </a>
+                    <h2>EsporTIvo</h2>
+
+                    <p class="descricao"
+                        data-pt="Plataforma de notícias sobre esportes e streaming desenvolvida como Projeto Integrador"
+                        data-en="News platform about sports and streaming developed as an Integrative Project">
+                        Plataforma de notícias sobre esportes e streaming desenvolvida com Projeto Integrador.
+                    </p>
+
+                    <div class="tecnologias">
+                        <span class="tech">PHP</span>
+                        <span class="tech">MySQL</span>
+                    </div>
+
+                    <div class="acoes">
+                        <a href="https://github.com/manukuiawa/EsporTIvo" class="projeto-acao secundaria"
+                            target="_blank" data-pt="Ver GitHub" data-en="View GitHub">
+                            Ver GitHub
+                        </a>
+                    </div>
+
                 </article>
 
-            </div>
+                <article class="card">
 
-        </div>
-    </section>
+                    <div class="card-img">
+                        <img src="image/presenti.png" alt="Projeto presenTI">
+                    </div>
 
-    <section id="contato" class="reveal">
+                    <p class="categoria" data-pt="Desenvolvimento de Software" data-en="Software Development">
+                        Desenvolvimento de Software
+                    </p>
 
-        <div class="container-contato">
+                    <h2>PresenTI</h2>
 
-            <div class="topo-contato">
-                <p class="code-tag">// Vamos Trabalhar Juntos?</p>
+                    <p class="descricao" data-pt=" Software para registro automático de presença baseado no login."
+                        data-en="Software for automatic attendance registration based on login">
+                        Software para registro automático de presença baseado no login.
+                    </p>
 
-                <h1>Pronto para ter uma landing page estratégica?</h1>
+                    <div class="tecnologias">
+                        <span class="tech">Python</span>
+                        <span class="tech">MySQL</span>
+                    </div>
 
-                <p class="descricao-contato">
-                    Me chama no WhatsApp e vamos conversar sobre o seu projeto.
-                    Respondo o mais rápido possível
-                </p>
-            </div>
+                    <div class="acoes">
+                        <a href="https://github.com/manukuiawa/PresenTI" class="projeto-acao secundaria" target="_blank"
+                            data-pt="Ver GitHub" data-en="View GitHub">
+                            Ver GitHub
+                        </a>
+                    </div>
 
-            <div class="contato-opcoes">
+                </article>
 
-                <!-- WHATSAPP -->
-                <a href="https://wa.me/+5548988633724" target="_blank" class="whatsapp-box">
+                <div class="card mais-projetos">
+                    <div class="icone">+</div>
 
-                    <h2>WhatsApp</h2>
-                    <p class="conversa-whats">Clique abaixo e vamos conversar sobre o seu projeto.</p>
+                    <p data-pt="Mais Projetos" data-en="More Projects">
+                        Mais Projetos
+                    </p>
 
-                    <span class="botao-whatsapp">
-                        Conversar Agora
-                    </span>
-                </a>
-
-                <!-- EMAIL -->
-                <div class="email-box">
-                    <h2>Email</h2>
-                    <p>Prefere enviar uma mensagem formal?</p>
-
-                    <strong>manuella.kuiawa@gmail.com</strong>
-
-                    <a href="mailto:manuella.kuiawa@gmail.com" class="botao-email">
-                        Enviar Email
-                    </a>
+                    <p data-pt="Em breve novos projetos por aqui" data-en="More projects coming soon">
+                        Em breve novos projetos por aqui
+                    </p>
                 </div>
 
             </div>
+        </div>
+    </section>
 
+    <section id="contato" class="sobre reveal">
+        <div class="container-contato">
+
+            <div class="topo-contato">
+                <p class="code-tag" data-pt="// Vamos Conversar" data-en="// Let's Talk">
+                    // Vamos Conversar
+                </p>
+
+                <h1 data-pt="Entre em Contato" data-en="Get in Touch">
+                    Entre em Contato
+                </h1>
+
+                <p class="descricao-contato"
+                    data-pt="Se você tem uma ideia, projeto ou só quer trocar uma ideia tech, me chama!"
+                    data-en="If you have an idea, project or just want to talk tech, reach out!">
+                    Se você tem uma ideia, projeto ou só quer trocar uma ideia tech, me chama!
+                </p>
+            </div>
+
+            <div class="grid-contato">
+
+                <div class="redes-contato">
+
+                    <a href="mailto:manuella.kuiawa@gmail.com" class="item-rede" target="_blank">
+                        <span>Email</span>
+                        <strong>manuella.kuiawa@gmail.com</strong>
+                    </a>
+
+                    <a href="https://github.com/manukuiawa" class="item-rede" target="_blank">
+                        <span>GitHub</span>
+                        <strong>github.com/manukuiawa</strong>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/manukuiawa/" class="item-rede" target="_blank">
+                        <span>LinkedIn</span>
+                        <strong>linkedin.com/in/manukuiawa</strong>
+                    </a>
+
+                </div>
+
+                <form class="form-contato" action="https://formsubmit.co/manuella.kuiawa@gmail.com" method="POST">
+
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="Nova mensagem do portfólio 💌">
+                    <input type="hidden" name="_next" value="https://manukuiawa.github.io/newPortfolio//obrigado.html">
+
+                    <input type="text" name="name" placeholder="Seu nome" data-pt="Seu nome" data-en="Your name"
+                        required>
+
+                    <input type="email" name="email" placeholder="Seu email" data-pt="Seu email" data-en="Your email"
+                        required>
+
+                    <textarea name="message" placeholder="Sua mensagem..." data-pt="Sua mensagem..."
+                        data-en="Your message..." required></textarea>
+
+                    <button type="submit" data-pt="Enviar Mensagem" data-en="Send Message">
+                        Enviar Mensagem
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+    </section>>
+    <footer class="footer" class="sobre reveal">
+
+        <div class="footer-icons">
+            <a href="https://instagram.com/manu_kuiawa" target="_blank">
+                <img src="image/instagram.png" alt="Instagram">
+            </a>
+
+            <a href="https://linkedin.com/in/manukuiawa" target="_blank">
+                <img src="image/linkedin.png" alt="LinkedIn">
+            </a>
+
+            <a href="https://github.com/manukuiawa" target="_blank">
+                <img src="image/github.png" alt="GitHub">
+            </a>
+
+            <a href="mailto:manuella.kuiawa@gmail.com">
+                <img src="image/email.png" alt="Email">
+            </a>
         </div>
 
-    </section>
+        <p data-pt="© 2026 Manu Kuiawa. Todos os direitos reservados."
+            data-en="© 2026 Manu Kuiawa. All rights reserved.">
+            © 2026 Manu Kuiawa. Todos os direitos reservados.
+        </p>
+
+    </footer>
 
     <script src="script.js"></script>
 </body>
